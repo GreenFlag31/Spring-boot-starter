@@ -1,0 +1,23 @@
+<nav th:fragment="header" class="nav-container">
+  <div class="navigation align-middle">
+    <div class="left-side">
+      <a th:if="${!url.contains('home')}" th:href="@{home}">Home</a>
+      <a th:if="${!url.contains('user')}" th:href="@{user}">User</a>
+      <a
+        sec:authorize="${#authorization.expression('hasAuthority(''ROLE_ADMIN'')')}"
+        th:if="${!url.contains('admin')}"
+        th:href="@{admin}"
+        >Admin</a
+      >
+    </div>
+    <button sec:authorize="!isAuthenticated()" th:href="@{/login}">Login</button>
+    <form
+      sec:authorize="isAuthenticated()"
+      th:action="@{/logout}"
+      method="POST"
+      class="navigation-container"
+    >
+      <button type="submit">Sign Out</button>
+    </form>
+  </div>
+</nav>

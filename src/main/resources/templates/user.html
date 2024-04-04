@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title>Connected</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" th:href="@{css/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/css/user.css}" />
+  </head>
+  <body>
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div class="align-middle">
+      <div class="connected-user-container">
+        <h1>Logged user: <span sec:authentication="name"></span></h1>
+        <p>Roles: <span sec:authentication="principal.authorities" class="emphasize"></span>.</p>
+        <div
+          class="roles-definition-container"
+          th:with="admin=${#authorization.expression('hasAuthority(''ROLE_ADMIN'')')}"
+          th:classappend="${!admin} ? 'user'"
+        >
+          <p sec:authorize="hasAuthority('ROLE_USER') && !hasAuthority('ROLE_ADMIN')">
+            A user only have access to certain pages
+          </p>
+          <p th:if="${admin}">An admin can visit all pages</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

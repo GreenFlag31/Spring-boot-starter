@@ -1,0 +1,45 @@
+@import './base.css';
+
+.admin-container {
+  margin-top: 5rem;
+}
+
+h3 {
+  margin: 3rem 0 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  padding: 0.7rem;
+}
+
+table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+table tr:hover {
+  background: #ddd;
+}
+
+table th {
+  padding: 0.7rem;
+  text-align: left;
+  background-color: #169e37;
+  color: white;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.icons-container svg {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}

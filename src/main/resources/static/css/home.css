@@ -1,0 +1,16 @@
+@import './base.css';
+
+.home-container {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.home-container h1 {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.navigation-content {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

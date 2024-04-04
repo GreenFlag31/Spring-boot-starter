@@ -1,0 +1,69 @@
+@import './base.css';
+
+.login-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+}
+.connection-modalities {
+  position: relative;
+  display: flex;
+}
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: green;
+  width: calc(100% / 2);
+  transition: left 0.3s ease-out;
+}
+.connection-modalities button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 0;
+  color: #000;
+}
+.connection-modalities button:hover {
+  background: rgb(231 231 231);
+}
+
+.register-container {
+  display: none;
+}
+.content {
+  margin: 3rem 0 3rem;
+}
+button {
+  width: 100%;
+}
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.footer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.login-info {
+  margin-top: 1rem;
+}

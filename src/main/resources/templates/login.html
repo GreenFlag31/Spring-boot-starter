@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" th:href="@{css/favicon.png}" />
+    <link rel="stylesheet" th:href="@{css/login.css}" />
+    <script th:src="@{js/login.js}" defer></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="connection-modalities">
+        <button class="sign-in">Sign in</button>
+        <button class="register">Register</button>
+        <span class="line"></span>
+      </div>
+
+      <div class="sign-in-container">
+        <div class="login-info">
+          <div th:if="${param.error}">Invalid username and password.</div>
+          <div th:if="${param.logout}">You have been logged out.</div>
+        </div>
+        <form th:action="@{/login}" method="post">
+          <div class="content">
+            <label>Username: <input type="text" name="username" /></label>
+            <label>Password: <input type="text" name="password" /></label>
+          </div>
+          <button type="submit">Submit</button>
+          <div class="footer">
+            <p>
+              Log in as <span class="emphasize">user</span> and
+              <span class="emphasize">user</span> or <span class="emphasize">admin</span> and
+              <span class="emphasize">admin</span>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="register-container">
+        <form th:action="@{/register}" method="post">
+          <div class="content">
+            <label>Username: <input type="text" name="username" /></label>
+            <label>Password: <input type="text" name="password" /></label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

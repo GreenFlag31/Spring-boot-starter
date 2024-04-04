@@ -1,0 +1,25 @@
+@import './base.css';
+
+.connected-user-container {
+  margin-top: 5rem;
+}
+.connected-user-container h1 {
+  margin-bottom: 1rem;
+}
+
+.roles-definition-container {
+  margin-top: 3rem;
+  padding: 0.625rem;
+  background: rgb(242, 255, 242);
+  border: 1px solid green;
+  border-radius: 0.3rem;
+}
+.roles-definition-container.user {
+  border: 1px solid orange;
+  background: rgb(255, 252, 245);
+}
+.navigation-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

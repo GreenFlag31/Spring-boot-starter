@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title>Page available to everyone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" th:href="@{css/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+  </head>
+  <body>
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div class="home-container align-middle">
+      <h1>Home</h1>
+      <p>This page does not require authentication.</p>
+    </div>
+  </body>
+</html>
