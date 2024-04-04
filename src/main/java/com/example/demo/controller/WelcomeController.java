@@ -59,8 +59,9 @@ public class WelcomeController {
       Optional<User> currentUser = userRepository.findById(record.getUserId());
 
       if (currentUser.isPresent()) {
-        String username = currentUser.get().getUsername();
-        Integer id = currentUser.get().getId();
+        User user = currentUser.get();
+        String username = user.getUsername();
+        Integer id = user.getId();
         if (!username.equals("admin")) {
           Map<String, Object> userDetail = new HashMap<>();
 
